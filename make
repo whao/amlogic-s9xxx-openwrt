@@ -1171,15 +1171,6 @@ loop_make() {
                 {
                     kernel="${k}"
 
-                    # Skip inapplicable kernels
-                    # if [[ "${KERNEL_TAGS}" =~ ^[1-9].[0-9]+ ]]; then
-                    #    [[ "${kernel}" != "$(echo ${KERNEL_TAGS} | awk -F'.' '{print $1"."$2"."}')"* ]] && {
-                    #        echo -e "(${j}.${i}) Based on model_database.conf, skip the [ ${board} - ${kd}/${kernel} ] make."
-                    #        let i++
-                    #        continue
-                    #    }
-                    # fi
-
                     # Check disk space size
                     echo -ne "(${j}.${i}) Start making OpenWrt [\033[92m ${board} - ${KERNEL_TAGS}/${kernel} \033[0m]. "
                     now_remaining_space="$(df -Tk ${make_path} | tail -n1 | awk '{print $5}' | echo $(($(xargs) / 1024 / 1024)))"
