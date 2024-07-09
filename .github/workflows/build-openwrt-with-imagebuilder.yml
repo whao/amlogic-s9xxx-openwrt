@@ -172,6 +172,7 @@ on:
         type: choice
         options:
           - 5.4.y
+          - 5.10.16
           - 5.10.y
           - 5.15.y
           - 6.1.y
@@ -200,6 +201,7 @@ on:
           - flippy
           - dev
           - beta
+          - rk35xx
       builder_name:
         description: "Set OpenWrt builder signature."
         required: false
