@@ -540,29 +540,7 @@ download_kernel() {
         {
             # Set the kernel download list
             kd="${k}"
-            case "${k}" in
-            stable) down_kernel_list=(${stable_kernel[@]}) ;;
-            flippy) down_kernel_list=(${flippy_kernel[@]}) ;;
-            dev) down_kernel_list=(${dev_kernel[@]}) ;;
-            beta) down_kernel_list=(${beta_kernel[@]}) ;;
-            rk3588) down_kernel_list=(${rk3588_kernel[@]}) ;;
-            rk35xx) down_kernel_list=(${rk35xx_kernel[@]}) ;;
-            h6) down_kernel_list=(${h6_kernel[@]}) ;;
-            5.x.y)
-                down_kernel_list=(${specific_5xy[@]})
-                kd="${specific_tags}"
-                ;;
-            6.x.y)
-                down_kernel_list=(${specific_6xy[@]})
-                kd="${specific_tags}"
-                ;;
-            specific)
-                down_kernel_list=(${specific_kernel[@]})
-                kd="${specific_tags}"
-                ;;
-            *) error_msg "Invalid tags." ;;
-            esac
-
+            down_kernel_list=(${rk35xx_kernel[@]})
             # Download the kernel to the storage directory
             i="1"
             for kernel_var in "${down_kernel_list[@]}"; do
