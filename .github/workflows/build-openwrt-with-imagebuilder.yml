@@ -199,6 +199,7 @@ on:
           - flippy
           - dev
           - beta
+          - rk35xx
       builder_name:
         description: "Set OpenWrt builder signature."
         required: false
